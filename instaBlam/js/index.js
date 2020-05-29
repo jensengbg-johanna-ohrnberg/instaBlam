@@ -72,6 +72,21 @@ function contrastChange(val) {
     });
 };
 
+function sepiaChange(val) {
+    Caman('#capturedPhoto', function() {
+        if (val == 0) {
+            this.revert();
+        }
+
+        console.log(val);
+
+        this.sepia(val - oldVal);
+
+        oldVal = val;
+        this.render();
+    });
+};
+
 function saturationChange(val) {
     Caman('#capturedPhoto', function() {
         if (val == 0) {
@@ -123,6 +138,7 @@ removeBtn.addEventListener('click', (e) => {
     Caman('#capturedPhoto', function() {
         document.getElementById('brightness').value = 0;
         document.getElementById('contrast').value = 0;
+        document.getElementById('sepia').value = 0;
         document.getElementById('saturation').value = 0;
         document.getElementById('sharpen').value = 0;
         document.getElementById('exposure').value = 0;
