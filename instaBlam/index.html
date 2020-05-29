@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="img/instaBlam-logo-180X180.png">
+        <meta name="apple-mobile-web-app-status-bar" content="#92dae8">
+        <meta name="theme-color" content="#92dae8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>InstaBlam</title>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="img/instaBlam-logo-standard.png" alt="Logo">
+            <h1 class="title">insta<span class="blam">Blam</span></h1>
+            <nav class="navigationMobileTablet">
+                <a href="#"><img class="icons" src="img/home-icon.png" alt="Home"></a>
+                <a href="#"><img class="icons" src="img/search-icon.png" alt="Search"></a>
+                <a href="index.html"><img class="icons" src="img/add-icon.png" alt="Add Image"></a>
+                <a href="#"><img class="icons" src="img/activity-icon.png" alt="Activities"></a>
+                <a href="#"><img class="icons" src="img/profile-icon.png" alt="Profile"></a>
+            </nav>
+        </header>
+        <main>
+            <aside>
+                <nav class="navigationLaptop">
+                    <a href="#">Home</a>
+                    <a href="#">Search</a>
+                    <a href="index.html">Add image</a>
+                    <a href="#">Activities</a>
+                    <a href="#">Profile</a>
+                </nav>
+            </aside>
+            <video id="video"></video>
+            <button id="captureBtnMobile"></button>
+            <button id="captureBtnTablet"></button>
+            <button id="captureBtnLaptop">Capture Image</button>
+
+            <canvas id="capturedPhoto"></canvas>
+
+            <section id="range-left">
+                <label class="label" for="vol">Brightness</label>
+                <input type="range" class="slider brightness" id="brightness" min="-50" max="50" value="0" step="1" onchange="brightnessChange(this.value)">
+
+                <label class="label" for="vol">Contrast</label>
+                <input type="range" class="slider contrast" id="contrast" min="-50" max="50" value="0" step="1" onchange="contrastChange(this.value)">
+            </section>
+            <section id="range-right">
+                <label class="label" for="vol">Saturation</label>
+                <input type="range" class="slider saturation" id="saturation" min="-50" max="50" value="0" step="1" onchange="saturationChange(this.value)">
+
+                <label class="label" for="vol">Sharpen</label>
+                <input type="range" class="slider sharpen" id="sharpen" min="-50" max="50" value="0" step="1" onchange="sharpenChange(this.value)">
+
+                <label class="label" for="vol">Exposure</label>
+                <input type="range" class="slider exposure" id="exposure" min="-50" max="50" value="0" step="1" onchange="exposureChange(this.value)">
+            </section>
+        </main>
+        <footer id="footer">
+            <button id="removeBtn">Remove Filters</button>
+        </footer>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
